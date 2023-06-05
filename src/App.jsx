@@ -1,22 +1,17 @@
-import logo from "./logo.svg";
+import { useStore } from "effector-react";
+import { useEffect } from "react";
+import { $pizza, getItems } from "./store/items";
 
 function App() {
+	useEffect(()=>{
+		getItems();
+	},[]);
+	const pizza = useStore($pizza);
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-          Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-          Learn React
-				</a>
-			</header>
+		<div>
+			{pizza.map((el,i)=>{
+				return <div key={i}>{el.title}</div>;
+			})}
 		</div>
 	);
 }
