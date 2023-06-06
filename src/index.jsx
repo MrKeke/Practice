@@ -3,13 +3,17 @@ import ReactDOM from "react-dom/client";
 import React from "react";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Main } from "./components/main";
+import MainPage from "./components/MainPage";
+import "./index.css"
+import {LayoutComponent} from "./components/Layout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<>
 	<App /> 
-	<Main />
+		<LayoutComponent>
+			<MainPage />
+		</LayoutComponent>
 	</>
 );
 
