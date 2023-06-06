@@ -8,6 +8,7 @@ function App() {
 	},[]);
 	const pizza = useStore($pizza);
 	return (
+		
 		<div>
 			{pizza.map((el,i)=>{
 				return <div key={i}>{el.title}</div>;
