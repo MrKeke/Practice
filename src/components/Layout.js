@@ -9,6 +9,7 @@ export function LayoutComponent({children, headerContent}){
 
   return (
     <Layout>
+      
       <Header
         style={{
         position: 'sticky',
@@ -21,10 +22,12 @@ export function LayoutComponent({children, headerContent}){
 
         className="bg-white m-auto flex justify-around"
         >
-
         <h1>Куда пицца</h1>
-        <Button className="bg-orange-400 text-gray-50 first:mx-10"><ShoppingCartOutlined />Корзина</Button>
-
+        <Button className="bg-orange-400 text-gray-50"><ShoppingCartOutlined className='text-lg absolute left-1 bottom-1'></ShoppingCartOutlined>Корзина</Button>
+        <p>Время работы : с 11:30 до 23:00</p>
+      <div> Города</div>
+      <div>Войти в аккаунт</div>
+      <div>Hexlet Pizza</div>
     </Header>
   <Content
     className="site-layout"
