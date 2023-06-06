@@ -1,6 +1,5 @@
 
 import { UploadOutlined, UserOutlined, VideoCameraOutlined, ShoppingCartOutlined } from '@ant-design/icons';
-import telega from "../Pictures/Vector.svg"
 import { Layout, Menu, Breadcrumb, Button, Image } from 'antd';
 import React from 'react';
 const { Header, Content, Footer, Sider } = Layout;
@@ -9,7 +8,6 @@ export function LayoutComponent({children, headerContent}){
 
   return (
     <Layout>
-      
       <Header
         style={{
         position: 'sticky',
@@ -19,20 +17,22 @@ export function LayoutComponent({children, headerContent}){
         display: 'flex',
         alignItems: 'center',
       }}
-
-        className="bg-white m-auto flex justify-around"
+        className="bg-white flex"
         >
-        <h1>Куда пицца</h1>
-        <Button className="bg-orange-400 text-gray-50"><ShoppingCartOutlined className='text-lg absolute left-1 bottom-1'></ShoppingCartOutlined>Корзина</Button>
-        <p>Время работы : с 11:30 до 23:00</p>
-      <div> Города</div>
-      <div>Войти в аккаунт</div>
-      <div>Hexlet Pizza</div>
+          <div className='absolute m-auto flex'>
+          <div className=''>Города</div>
+          <h1 className='ml-7'>Среднее время доставки:  30:00</h1>
+          <p className='ml-7'>Время работы : с 11:30 до 23:00</p>
+        <div className='ml-72 text-xl text-black font-bold'>Hexlet Pizza</div>
+        <Button className="bg-orange-400 text-gray-50 mt-4 ml-[750px]"><ShoppingCartOutlined className='text-lg absolute left-1 bottom-1'></ShoppingCartOutlined>Корзина</Button>
+      {/* <div className='ml-10'>Войти в аккаунт</div> */}
+        <Button className='bg-orange-400 text-gray-50 mt-4 ml-8'><UserOutlined className='text-lg absolute bottom-[3px] left-[6px]'></UserOutlined></Button>
+      </div>
     </Header>
   <Content
     className="site-layout"
     style={{
-      padding: '0 50px',
+      padding: '0 50px'
     }}
   >
     <Breadcrumb
