@@ -14,7 +14,7 @@ export function LayoutComponent(){
       <BodyComponent>
         <MainPage />
       </BodyComponent>
-      <Footer trademark="© Copyright 2021 — Hexlet Pizza"></Footer>
+      <Footer />
     </Layout>
   );
 };
