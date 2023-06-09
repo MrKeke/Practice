@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavGen } from "../NavGen";
 import pizzaIcon from "../../Pictures/pizza.jpg";
 import sushiIcon from "../../Pictures/sushi.jpg";
@@ -43,16 +43,18 @@ const navLinks = [
 		icon: sauceIcon,
 	},
 ];
-export const BodyComponent =  ({ children }) => {
-	// const items = new Array(10).fill({
-	// 	media: pizzaMedia,
-	// 	name: "pizza1",
-	// 	ingredients:
-    //   "lodcdslcmdj njknjdsknckdjs cjdskcndsjkcndskj cjdskncdsjkcndskj cjdsncsjdkc dksj cjdsncjsdnc lkjsd n",
-	// 	price: 907,
-	// });
-	// console.log(items)
-	const items =  axios.get("http://localhost:3000/pizza").then((resp)=>resp.data)
+
+const getItems = async () => {
+	return (await axios.get("http://localhost:3000/pizza")).data;
+};
+
+export const BodyComponent = ({ children }) => {
+	const [items, setItems] = useState([]);
+
+	useEffect(() => {
+		getItems().then(d => setItems(d));
+	}, []);
+
 	return (
 		<Content
 			className="site-layout"
@@ -72,13 +74,28 @@ export const BodyComponent =  ({ children }) => {
 					<NavGen navLinks={navLinks} />
 				</div>
 				<div className="grid grid-cols-4 gap-8 max-w-[1200px] mx-auto my-0">
-					{ items.then((e)=>{
-						console.log(e)
-						return e.map((item)=><Product {...item}/>)
-					})}
+					{items.map(el => <Product {...el}/>)}
 				</div>
 			</div>
 			{children}
 		</Content>
 	);
 };
+
+// // const items = new Array(10).fill({
+// // 	media: pizzaMedia,
+// // 	name: "pizza1",
+// // 	ingredients:
+// //   "lodcdslcmdj njknjdsknckdjs cjdskcndsjkcndskj cjdskncdsjkcndskj cjdsncsjdkc dksj cjdsncjsdnc lkjsd n",
+// // 	price: 907,
+// // });
+// // console.log(items)
+// const [items, setItems] = useState([]);
+
+// const getItems = () =>
+// 	axios.get("http://localhost:3000/pizza").then((data) => data.data);
+
+// useEffect(() => {
+// 	const s = getItems();
+// 	setItems(s);
+// }, []);

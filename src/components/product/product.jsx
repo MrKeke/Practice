@@ -1,5 +1,4 @@
 export const Product = ({ id, price, name, ingridients,src }) => {
-	debugger
 	return (
 		<div id={id} className="p-3 bg-white text-base rounded flex flex-col gap-4">
 			<img src={src} />
