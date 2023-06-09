@@ -78,4 +78,3 @@ export const BodyComponent = ({ children }) => {
 		</Content>
 	);
 };
->>>>>>> fb55cb3cf294c654bb2d3d5e5191d174e6e941f9
