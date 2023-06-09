@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { NavGen } from "../NavGen";
-import pizzaIcon from "../../Pictures/pizza.jpg";
-import sushiIcon from "../../Pictures/sushi.jpg";
-import drinkIcon from "../../Pictures/drink.jpg";
-import snackIcon from "../../Pictures/snack.jpg";
-import comboIcon from "../../Pictures/combo.jpg";
-import pizzaMedia from "../../Pictures/Rectangle 4.svg";
-import dessertIcon from "../../Pictures/dessert.jpg";
-import sauceIcon from "../../Pictures/sauce.jpg";
 import { Layout } from "antd";
 import { Product } from "../product/product";
 import axios from "axios";
@@ -16,31 +8,31 @@ const { Content } = Layout;
 const navLinks = [
 	{
 		name: "Пицца",
-		icon: pizzaIcon,
+		icon: '/nav/pizza.jpg',
 	},
 	{
 		name: "Суши",
-		icon: sushiIcon,
+		icon: '/nav/sushi.jpg',
 	},
 	{
 		name: "Напитки",
-		icon: drinkIcon,
+		icon: "/nav/drink.jpg",
 	},
 	{
 		name: "Снэки",
-		icon: snackIcon,
+		icon: "/nav/snack.jpg",
 	},
 	{
 		name: "Комбо",
-		icon: comboIcon,
+		icon: "/nav/combo.jpg",
 	},
 	{
 		name: "Десерты",
-		icon: dessertIcon,
+		icon: "/nav/dessert.jpg",
 	},
 	{
 		name: "Соусы",
-		icon: sauceIcon,
+		icon: "/nav/sauce.jpg",
 	},
 ];
 
@@ -60,14 +52,14 @@ export const BodyComponent = ({ children }) => {
 			className="site-layout"
 			style={{
 				padding: "0 50px",
-				background: "white",
+				// background: "white",
 			}}
 		>
 			<div
 				style={{
 					padding: 24,
 					minHeight: 380,
-					backgroundColor: "#f9f9f9",
+					// backgroundColor: "#f9f9f9",
 				}}
 			>
 				<div className="flex justify-between pb-8 mx-auto max-w-[1200px] my-0">
@@ -82,20 +74,3 @@ export const BodyComponent = ({ children }) => {
 	);
 };
 
-// // const items = new Array(10).fill({
-// // 	media: pizzaMedia,
-// // 	name: "pizza1",
-// // 	ingredients:
-// //   "lodcdslcmdj njknjdsknckdjs cjdskcndsjkcndskj cjdskncdsjkcndskj cjdsncsjdkc dksj cjdsncjsdnc lkjsd n",
-// // 	price: 907,
-// // });
-// // console.log(items)
-// const [items, setItems] = useState([]);
-
-// const getItems = () =>
-// 	axios.get("http://localhost:3000/pizza").then((data) => data.data);
-
-// useEffect(() => {
-// 	const s = getItems();
-// 	setItems(s);
-// }, []);
