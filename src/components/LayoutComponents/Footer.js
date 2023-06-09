@@ -5,8 +5,7 @@ import placeSign from "../../Pictures/placeSign.png";
 import facebookLogo from "../../Pictures/facebookLogo.png";
 import instagramLogo from "../../Pictures/instagramLogo.png";
 
-class Footer extends React.Component {
-	render() {  
+const Footer = ({trademark}) => {
 		return (
 			<footer className="flex flex-row justify-between py-12 px-32 " style={{backgroundColor:"#F0F0F0"}}>
 
@@ -15,7 +14,7 @@ class Footer extends React.Component {
 						<img src={logo} className="h-8 w-8 mr-2"></img>
 						<h1>Hexlet Pizza</h1>
 					</div>
-					<h1 className="whitespace-nowrap absolute bottom-1">{this.props.trademark}</h1>
+					<h1 className="whitespace-nowrap absolute bottom-1">{trademark}</h1>
 				</div>
 
 				<div className="flex flex-col w-1/5 pr-8">
@@ -43,7 +42,6 @@ class Footer extends React.Component {
 
 			</footer>
 		);
-	}
 }
 
 export default Footer;
