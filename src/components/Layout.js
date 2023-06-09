@@ -12,7 +12,7 @@ export function LayoutComponent(){
     <Layout>
       <HeaderComponent />
       <BodyComponent>
-        <MainPage />
+        {/* <MainPage /> */}
       </BodyComponent>
       <Footer trademark="© Copyright 2021 — Hexlet Pizza"/>
     </Layout>

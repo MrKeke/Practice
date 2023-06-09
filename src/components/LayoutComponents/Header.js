@@ -1,18 +1,13 @@
 import React from "react";
 import {Button, Layout} from "antd";
 import {ShoppingCartOutlined, UserOutlined} from "@ant-design/icons";
-import {Helmet} from "react-helmet";
 const {Header} = Layout
 
 export const HeaderComponent = () => {
   return(
     <Header
-      className="bg-white flex sticky top-0 z-1 w-full items-center"
-    >
-      <Helmet>
-        <title>Main Page</title>
-      </Helmet>
-      <div className='absolute m-auto flex'>
+      className="bg-white flex flex-wrap sticky top-0 z-1 w-full items-center">
+      <div className=' fixed flex z-10 m-auto'>
         <div className=''>Города</div>
         <h1 className='ml-7'>Среднее время доставки:  30:00</h1>
         <p className='ml-7'>Время работы : с 11:30 до 23:00</p>
