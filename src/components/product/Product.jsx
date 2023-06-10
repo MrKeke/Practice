@@ -5,7 +5,7 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 	return (
 			<div key={id} className="relative p-3 bg-white h-[500px] text-base rounded flex flex-col gap-6 hover:cursor-pointer">
 				<div className="">
-					<img src={img} alt={name + "-Фото"} className=" hover:mt-2 " />
+					<img src={img} alt={name + "-Фото"} className=" transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300" />
 					<h6 className="font-semibold">{name}</h6>
 					<p>{ingridients}</p>
 				</div>
