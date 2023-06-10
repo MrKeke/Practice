@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { NavGen } from "../NavGen";
 import { Layout } from "antd";
-import { Product } from "../product/product";
+import { Product } from "../product/Product";
 import axios from "axios";
+import ModalHandler from "../handlers/ModalHandler";
 const { Content } = Layout;
+
 
 const navLinks = [
 	{
@@ -64,7 +66,7 @@ export const BodyComponent = ({ children }) => {
 					<NavGen navLinks={navLinks} />
 				</div>
 				<div className="grid grid-cols-4 gap-8 max-w-[1200px] mx-auto my-0">
-					{items.map(el => <Product {...el}/>)}
+						{items.map(el => <Product {...el}/>)}
 				</div>
 			</div>
 			{children}

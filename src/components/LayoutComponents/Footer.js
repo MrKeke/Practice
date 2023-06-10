@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = ({trademark}) => {
 	return (
-		<footer className="flex flex-row justify-between py-12 px-32 " style={{backgroundColor:"#F0F0F0"}}>
+		<footer className="flex flex-row justify-between py-12 px-32 bg-[#F0F0F0]">
 			
 			<div className="flex relative w-2/5">
 				<div className="whitespace-nowrap flex flex-row items-center text-base absolute top-1">
