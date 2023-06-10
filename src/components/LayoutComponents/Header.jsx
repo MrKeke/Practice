@@ -1,24 +1,27 @@
 import React from "react";
 import {Button, Layout} from "antd";
 import {ShoppingCartOutlined, UserOutlined} from "@ant-design/icons";
-const {Header} = Layout
 import {useScrollDirection} from "../handlers/ScrollHandler"
+import CitiesSelect from "../CitiesSelect";
 
 export const HeaderComponent = () => {
   const scrollDirection = useScrollDirection();
   return(
-    <Header
-      className={`bg-white sticky top-0 h-16 z-20 w-full ${ scrollDirection === "down" ? "-top-16" : "top-0"}`}>
-        <div className="flex flex-row items-center flex-nowrap">
-        <p>Города</p>
-        <p className='ml-5'>Среднее время доставки:  45 минут</p>
-        <div className="border-b-gray-50"> </div>
-        <p className='text-black font-bold grow text-center'>Hexlet Pizza</p>
-        <div className=" items-center">
-        <Button className="bg-orange-400 text-gray-50"><ShoppingCartOutlined></ShoppingCartOutlined>Корзина</Button>
-        <Button className='bg-orange-400 text-gray-50 ml-3'><UserOutlined></UserOutlined></Button>
+    <div className={`bg-white sticky top-0 h-20 z-20 w-full ${ scrollDirection === "down" ? "-top-20" : "top-0"}`}>
+        <div>
+          <div className="mx-16 h-8 flex flex-row items-center flex-nowrap">
+              <CitiesSelect />
+              <p className='ml-5'>Среднее время доставки:  45 минут</p>
+          </div>
+          <div className="border-b-2 w-full mb-2"/>
+          <div>
+            <div className="mx-20 flex flex-row items-center flex-nowrap">
+              <p className='text-black font-bold grow'>Hexlet Pizza</p>
+              <Button className="bg-orange-400 text-gray-50"><ShoppingCartOutlined></ShoppingCartOutlined>Корзина</Button>
+              <Button className='bg-orange-400 text-gray-50 ml-3'><UserOutlined></UserOutlined></Button>
+            </div>
+          </div>
         </div>
-        </div>
-    </Header>
+    </div>
   )
 }
