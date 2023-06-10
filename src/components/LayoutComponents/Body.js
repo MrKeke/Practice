@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { NavGen } from "../NavGen";
 import { Layout } from "antd";
-import { Product } from "../product/product";
+import { Product } from "../product/Product";
 import axios from "axios";
+import ModalHandler from "../handlers/ModalHandler";
 const { Content } = Layout;
+
 
 const navLinks = [
 	{
@@ -52,21 +54,23 @@ export const BodyComponent = ({ children }) => {
 			className="site-layout"
 			style={{
 				padding: "0 50px",
-				// background: "white",
 			}}
 		>
 			<div
 				style={{
 					padding: 24,
 					minHeight: 380,
-					// backgroundColor: "#f9f9f9",
 				}}
 			>
 				<div className="flex justify-between pb-8 mx-auto max-w-[1200px] my-0">
 					<NavGen navLinks={navLinks} />
 				</div>
-				<div className="grid grid-cols-4 gap-8 max-w-[1200px] mx-auto my-0">
-					{items.map(el => <Product {...el}/>)}
+
+				<div className="mx-auto max-w-[1200px]">
+					<h1 className="pb-6 text-3xl font-bold">Пиццы</h1>
+					<div className="grid grid-cols-4 gap-8">
+						{items.map(el => <Product {...el}/>)}
+					</div>
 				</div>
 			</div>
 			{children}
