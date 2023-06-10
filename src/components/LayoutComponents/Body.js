@@ -65,8 +65,12 @@ export const BodyComponent = ({ children }) => {
 				<div className="flex justify-between pb-8 mx-auto max-w-[1200px] my-0">
 					<NavGen navLinks={navLinks} />
 				</div>
-				<div className="grid grid-cols-4 gap-8 max-w-[1200px] mx-auto my-0">
+
+				<div className="mx-auto max-w-[1200px]">
+					<h1 className="pb-6 text-3xl font-bold">Пиццы</h1>
+					<div className="grid grid-cols-4 gap-8">
 						{items.map(el => <Product {...el}/>)}
+					</div>
 				</div>
 			</div>
 			{children}
