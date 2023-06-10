@@ -4,9 +4,9 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 	return (
 		<div key={id} className="relative p-3 bg-white h-[500px] text-base rounded flex flex-col gap-6">
 			<div className="">
-   			<img src={img} alt={name + "-Фото"} />
-			<h6 className="font-semibold">{name}</h6>
-			<p>{ingridients}</p>
+				<img src={img} alt={name + "-Фото"} />
+				<h6 className="font-semibold">{name}</h6>
+				<p>{ingridients}</p>
 			</div>
 			<div className="absolute flex text-end bottom-3 right-3 flex-auto">
 				<div className="text-[#FF7010] pt-3 pr-4 text-left font-semibold">от {price} ₽</div>

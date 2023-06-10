@@ -37,6 +37,6 @@ const Footer = ({trademark}) => {
 
 		</footer>
 	);
-}
+};
 
 export default Footer;
