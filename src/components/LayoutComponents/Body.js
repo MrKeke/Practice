@@ -52,14 +52,12 @@ export const BodyComponent = ({ children }) => {
 			className="site-layout"
 			style={{
 				padding: "0 50px",
-				// background: "white",
 			}}
 		>
 			<div
 				style={{
 					padding: 24,
 					minHeight: 380,
-					// backgroundColor: "#f9f9f9",
 				}}
 			>
 				<div className="flex justify-between pb-8 mx-auto max-w-[1200px] my-0">

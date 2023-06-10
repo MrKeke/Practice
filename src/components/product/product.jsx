@@ -2,9 +2,9 @@
 export const Product = ({ id, price, name, ingridients,img }) => {
 	console.log(__dirname+img)
 	return (
-		<div key={id} className="relative p-3 bg-white h-[500px] text-base rounded flex flex-col gap-6">
+		<div key={id} className="relative p-3 bg-white h-[500px] text-base rounded flex flex-col gap-6 hover:cursor-pointer">
 			<div className="">
-   			<img src={img} alt={name + "-Фото"} />
+   			<img src={img} alt={name + "-Фото"} className=" hover:mt-2 " />
 			<h6 className="font-semibold">{name}</h6>
 			<p>{ingridients}</p>
 			</div>
