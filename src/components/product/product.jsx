@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Product = ({ id, price, name, ingridients,img }) => {
-	console.log(__dirname+img)
+	console.log(__dirname+img);
 	return (
 		<div key={id} className="relative p-3 bg-white h-[500px] text-base rounded flex flex-col gap-6 hover:cursor-pointer">
 			<div className="">
