@@ -4,7 +4,7 @@
     ],
     "pizza": [
       {"id": 1,"price":100, "name": "Пицца от шефа", "ingridients": "Пастрами из мраморной говядины, сладкий перец, томаты, красный лук, чеснок, соус ткемали, моцарелла, фирменный томатный соус","img":"pizza/d7bbbc4c74af442e8b9b3ea2faf3c941_584x584.webp" },
-      {"id":2,"price":1,"name":"Гавайская с альфредо", "ingridients":"Фирменный соус альфредо, цыпленок, моцарелла, ананасы","img":"pizza/0d033c8eb9b24b21828d2fdb7dc3246d_584x584.webp"},
+      {"id":2,"price":9999,"name":"Гавайская с альфредо", "ingridients":"Фирменный соус альфредо, цыпленок, моцарелла, ананасы","img":"pizza/0d033c8eb9b24b21828d2fdb7dc3246d_584x584.webp"},
       {"id":3,"price":120,"name":"Сырная","ingridients":"Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо","img":"pizza/d9c609f1422247f2b87b6293eb461ff0_584x584.webp"},
       {"id":4,"price":120,"name":"Пепперони фреш","ingridients":"Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус","img":"pizza/27c9bbd0af3a4d1d84a086d9c2f1656d_584x584.webp"},
       {"id":5,"price":120,"name":"Двойной цыпленок","ingridients":"Цыпленок, моцарелла, фирменный соус альфредо","img":"pizza/ddadb2bd7f2d40459acddbe2f51a2389_584x584.webp"},
@@ -18,6 +18,23 @@
       {"id":13,"price":120,"name":"Песто","ingridients":"Цыпленок, соус песто, кубики брынзы, томаты, моцарелла, фирменный соус альфредо","img":"pizza/ba58ba9c2a3a4dbda7eb618882d7128d_584x584.webp"},
       {"id":14,"price":120,"name":"Мясная","ingridients":"Цыпленок, ветчина, пикантная пепперони, острая чоризо, моцарелла, фирменный томатный соус","img":"pizza/18dbb12240b041a191c9dc73c9c1f4ef_584x584.webp"},
       {"id":15,"price":120,"name":"Цыпленок карри","ingridients":"Цыпленок, ананасы, соус карри, красный лук, сладкий перец, моцарелла, фирменный томатный соус","img":"pizza/c8ac7d2eb95b4bd0b8bc2f366415896c_584x584.webp"}
+    ],
+    "sushi":[
+      {"id":1,"price":100,"name":"Москва","ingridients":"","img":"sushi/fila3.webp"},
+      {"id":2,"price":100,"name":"Домодедово","ingridients":"","img":"sushi/fila.webp"},
+      {"id":3,"price":100,"name":"Санкт-Питербург","ingridients":"","img":"sushi/filaBiiig.webp"},
+      {"id":4,"price":100,"name":"Подольск","ingridients":"","img":"sushi/filaostray.webp"},
+      {"id":5,"price":100,"name":"Рязань","ingridients":"","img":"sushi/florida.webp"},
+      {"id":6,"price":100,"name":"Лыткарино","ingridients":"","img":"sushi/kavai.webp"},
+      {"id":7,"price":100,"name":"Ставрополь","ingridients":"","img":"sushi/kalifornia fig.webp"},
+      {"id":8,"price":100,"name":"Кемерово","ingridients":"","img":"sushi/kalifornia.webp"},
+      {"id":9,"price":100,"name":"Владивосток","ingridients":"","img":"sushi/krab.webp"},
+      {"id":10,"price":100,"name":"Псков","ingridients":"","img":"sushi/new york.webp"},
+      {"id":11,"price":100,"name":"Краснодар","ingridients":"","img":"sushi/suki maki.webp"},
+      {"id":12,"price":100,"name":"Торжок","ingridients":"","img":"sushi/suki hyadsh.webp"},
+      {"id":13,"price":100,"name":"Екатеринбург","ingridients":"","img":"sushi/syki mmaki kunsey.webp"},
+      {"id":14,"price":100,"name":"Новгород","ingridients":"","img":"sushi/tamago maki.webp"},
+      {"id":15,"price":100,"name":"Пермь","ingridients":"","img":"sushi/ygor.webp"}
     ],
     "users": []
   }
