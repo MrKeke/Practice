@@ -7,14 +7,11 @@ import MainPage from "./MainPage";
 
 
 export function LayoutComponent(){
-
   return (
     <Layout>
       <HeaderComponent />
-      <BodyComponent>
-        {/* <MainPage /> */}
-      </BodyComponent>
-      <Footer trademark="© Copyright 2021 — Hexlet Pizza"/>
+      <BodyComponent />
+      <Footer trademark={`© Copyright ${new Date().getFullYear()} — Hexlet Pizza`}/>
     </Layout>
   );
 };

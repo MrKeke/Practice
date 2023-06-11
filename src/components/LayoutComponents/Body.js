@@ -47,7 +47,7 @@ const getSushi = async () => {
 };
 
 
-export const BodyComponent = ({ children }) => {
+export const BodyComponent = () => {
 	const [pizzas, setPizzasItem] = useState([]);
 	const [sushi, setSushiItem] = useState([])
 
@@ -89,7 +89,6 @@ export const BodyComponent = ({ children }) => {
 					</div>
 				</div>
 			</div>
-			{children}
 		</Content>
 	);
 };
