@@ -38,15 +38,24 @@ const navLinks = [
 	},
 ];
 
-const getItems = async () => {
+const getPizzas = async () => {
 	return (await axios.get("http://localhost:3000/pizza")).data;
 };
 
+const getSushi = async () => {
+	return (await axios.get("http://localhost:3000/sushi")).data;
+};
+
+
 export const BodyComponent = ({ children }) => {
-	const [items, setItems] = useState([]);
+	const [pizzas, setPizzasItem] = useState([]);
+	const [sushi, setSushiItem] = useState([])
 
 	useEffect(() => {
-		getItems().then(d => setItems(d));
+		getPizzas().then(d => setPizzasItem(d));
+	}, []);
+	useEffect(() => {
+		getSushi().then(d => setSushiItem(d));
 	}, []);
 
 	return (
@@ -69,7 +78,14 @@ export const BodyComponent = ({ children }) => {
 				<div className="mx-auto max-w-[1200px]">
 					<h1 className="pb-6 text-3xl font-bold font-dosis">Пиццы</h1>
 					<div className="grid grid-cols-4 gap-8">
-						{items.map(el => <Product {...el}/>)}
+						{pizzas.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px]">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Суши</h1>
+					<div className="grid grid-cols-4 gap-8">
+						{sushi.map(el => <Product {...el}/>)}
 					</div>
 				</div>
 			</div>

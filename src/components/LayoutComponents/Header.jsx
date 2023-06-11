@@ -3,7 +3,7 @@ import {Button, Layout, Modal} from "antd";
 import {ShoppingCartOutlined, UserOutlined} from "@ant-design/icons";
 import {useScrollDirection} from "../handlers/ScrollHandler"
 import CitiesSelect from "../CitiesSelect";
-import BusketComponent from "../BusketComponent";
+import BasketComponent from "../BasketComponent";
 
 export const HeaderComponent = () => {
   const scrollDirection = useScrollDirection();
@@ -39,7 +39,7 @@ export const HeaderComponent = () => {
                            Перейти к оплате
                          </Button>
                        ]}>
-                  <BusketComponent />
+                  <BasketComponent />
                 </Modal>
 
             </div>

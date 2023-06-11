@@ -20,21 +20,17 @@
       {"id":15,"price":120,"name":"Цыпленок карри","ingridients":"Цыпленок, ананасы, соус карри, красный лук, сладкий перец, моцарелла, фирменный томатный соус","img":"pizza/c8ac7d2eb95b4bd0b8bc2f366415896c_584x584.webp"}
     ],
     "sushi":[
-      {"id":1,"price":100,"name":"Москва","ingridients":"","img":"sushi/fila3.webp"},
-      {"id":2,"price":100,"name":"Домодедово","ingridients":"","img":"sushi/fila.webp"},
-      {"id":3,"price":100,"name":"Санкт-Питербург","ingridients":"","img":"sushi/filaBiiig.webp"},
-      {"id":4,"price":100,"name":"Подольск","ingridients":"","img":"sushi/filaostray.webp"},
-      {"id":5,"price":100,"name":"Рязань","ingridients":"","img":"sushi/florida.webp"},
-      {"id":6,"price":100,"name":"Лыткарино","ingridients":"","img":"sushi/kavai.webp"},
-      {"id":7,"price":100,"name":"Ставрополь","ingridients":"","img":"sushi/kalifornia fig.webp"},
-      {"id":8,"price":100,"name":"Кемерово","ingridients":"","img":"sushi/kalifornia.webp"},
-      {"id":9,"price":100,"name":"Владивосток","ingridients":"","img":"sushi/krab.webp"},
-      {"id":10,"price":100,"name":"Псков","ingridients":"","img":"sushi/new york.webp"},
-      {"id":11,"price":100,"name":"Краснодар","ingridients":"","img":"sushi/suki maki.webp"},
-      {"id":12,"price":100,"name":"Торжок","ingridients":"","img":"sushi/suki hyadsh.webp"},
-      {"id":13,"price":100,"name":"Екатеринбург","ingridients":"","img":"sushi/syki mmaki kunsey.webp"},
-      {"id":14,"price":100,"name":"Новгород","ingridients":"","img":"sushi/tamago maki.webp"},
-      {"id":15,"price":100,"name":"Пермь","ingridients":"","img":"sushi/ygor.webp"}
+      {"id":1,"price":100,"name":"Филадельфия","ingridients":"Рис, мицукан, нори, огурец, лосось","img":"sushi/fila3.webp"},
+      {"id":2,"price":100,"name":"Филадельфия XXL","ingridients":"Рис, мицукан, нори, огурец, лосось","img":"sushi/filaBiiig.webp"},
+      {"id":3,"price":100,"name":"Филадельфия Острая","ingridients":"Рис, мицукан, нори, огурец, лосось, чили","img":"sushi/filaostray.webp"},
+      {"id":4,"price":100,"name":"Флорида","ingridients":"Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, огурец, креветка, тобико","img":"sushi/florida.webp"},
+      {"id":5,"price":100,"name":"Кавай","ingridients":"Рис, мицукан, сахар, комбу, соль, нори, кальмар, салат, огурец, сыр сливочный, тобико, майонез, креветка","img":"sushi/kavai.webp"},
+      {"id":6,"price":100,"name":"Калифорния","ingridients":"Рис, мицукан, сахар, комбу, соль, нори, майонез, авокадо, снежный краб, тобико","img":"sushi/kalifornia.webp"},
+      {"id":7,"price":100,"name":"Мистер Крабс","ingridients":"Рис, мицукан, нори, огурец, краб","img":"sushi/krab.webp"},
+      {"id":8,"price":100,"name":"Нью-Йорк","ingridients":"Рис, мицукан, сахар, комбу, соль, нори, лосось, огурец, сыр сливочный, стружка тунца","img":"sushi/new york.webp"},
+      {"id":9,"price":100,"name":"Маки","ingridients":"Рис, мицукан, сахар, комбу, соль, нори, авокадо","img":"sushi/suki maki.webp"},
+      {"id":10,"price":100,"name":"Тамаго Маки","ingridients":"Рис, мицукан, сахар, комбу, соль, нори, авокадо","img":"sushi/tamago maki.webp"},
+      {"id":11,"price":100,"name":"Похотливый угорь","ingridients":"Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, огурец, лосось холодного копчения, угорь, кунжут белый, соус унаги","img":"sushi/ygor.webp"}
     ],
     "users": []
   }

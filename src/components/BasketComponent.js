@@ -1,7 +1,7 @@
 import {Button, Modal} from "antd";
 import { useState } from 'react';
 
-const BusketComponent = () => {
+const BasketComponent = () => {
 
     return (
       <div className="">
@@ -15,4 +15,4 @@ const BusketComponent = () => {
 }
 
 
-export default BusketComponent
+export default BasketComponent
