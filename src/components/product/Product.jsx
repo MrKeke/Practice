@@ -8,7 +8,7 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 					<div className={`h-64`}>
 						<img src={img} alt={name + "-Фото"} className=" transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300" />
 					</div>
-					<h6 className="font-semibold">{name}</h6>
+					<h6 className="font-semibold ">{name}</h6>
 					<p>{ingridients}</p>
 				</div>
 				<div className="absolute flex text-end bottom-3 right-3 flex-auto">

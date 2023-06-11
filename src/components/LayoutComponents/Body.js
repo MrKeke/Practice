@@ -46,16 +46,56 @@ const getSushi = async () => {
 	return (await axios.get("http://localhost:3000/sushi")).data;
 };
 
+const getDrinks = async () => {
+	return (await axios.get("http://localhost:3000/drinks")).data;
+};
+
+const getSnacks = async () => {
+	return (await axios.get("http://localhost:3000/snacks")).data;
+};
+
+const getCombo = async () => {
+	return (await axios.get("http://localhost:3000/combo")).data;
+};
+
+const getDesserts = async () => {
+	return (await axios.get("http://localhost:3000/desserts")).data;
+};
+
+const getSauces = async () => {
+	return (await axios.get("http://localhost:3000/sauces")).data;
+};
+
 
 export const BodyComponent = () => {
 	const [pizzas, setPizzasItem] = useState([]);
 	const [sushi, setSushiItem] = useState([])
+	const [drinks, setDrinksItem] = useState([])
+	const [snacks, setSnacksItem] = useState([])
+	const [combo, setComboItem] = useState([])
+	const [desserts, setDessertsItem] = useState([])
+	const [sauces, setSaucesItem] = useState([])
 
 	useEffect(() => {
 		getPizzas().then(d => setPizzasItem(d));
 	}, []);
 	useEffect(() => {
 		getSushi().then(d => setSushiItem(d));
+	}, []);
+	useEffect(() => {
+		getDrinks().then(d => setDrinksItem(d));
+	}, []);
+	useEffect(() => {
+		getSnacks().then(d => setSnacksItem(d));
+	}, []);
+	useEffect(() => {
+		getCombo().then(d => setComboItem(d));
+	}, []);
+	useEffect(() => {
+		getDesserts().then(d => setDessertsItem(d));
+	}, []);
+	useEffect(() => {
+		getSauces().then(d => setSaucesItem(d));
 	}, []);
 
 	return (
@@ -86,6 +126,41 @@ export const BodyComponent = () => {
 					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Суши</h1>
 					<div className="grid grid-cols-4 gap-8">
 						{sushi.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Напитки</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{drinks.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Снэки</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{snacks.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Комбо</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{combo.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Десерты</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{desserts.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Соусы</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{sauces.map(el => <Product {...el}/>)}
 					</div>
 				</div>
 			</div>
