@@ -1,7 +1,7 @@
 import { createEffect, createStore } from "effector";
 import axios from "axios";
 export const getItems = createEffect(()=>{
-	return axios.get("http://localhost:3000/items").then((e)=>{
+	return axios.get("http://localhost:3001/items").then((e)=>{
 		return e.data;
 	});
 });

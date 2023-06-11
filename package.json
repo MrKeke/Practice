@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "lint": "eslint src/*",
     "lint-fix": "eslint src/* --fix",
-    "start-backend": "json-server --watch db.json"
+    "start-backend": "json-server --watch db.json -p 3001"
   },
   "eslintConfig": {
     "extends": [
