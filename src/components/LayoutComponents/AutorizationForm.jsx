@@ -1,5 +1,5 @@
 import React from "react";
-// import axios from "axios";
+import axios from "axios";
 
 class AutorizationForm extends React.Component {
 	constructor(props) {
@@ -11,12 +11,10 @@ class AutorizationForm extends React.Component {
 		};
 	}
 
-	
-
 	render() {
 		return (
 			<div className="popup-bg fixed w-full h-screen top-0 left-0 bg-gray-500/50 opacity-0 pointer-events-none">
-				<form className="popup absolute top-1/2 left-1/2 w-6/12 p-6 bg-white translate-x-[-50%] translate-y-[-50%] rounded-xl opacity-0 pointer-events-none">
+				<form className="popup absolute top-1/2 left-1/2 w-6/12 p-6 bg-white translate-x-[-50%] translate-y-[-50%] rounded-xl opacity-0 pointer-events-none" ref={(el) => this.myForm = el}>
 					<label className="w-full mb-6 flex flex-col-reverse">
 
 						<input className="pointer-events-all h-9 text-lg outline-none border-b-orange-400 border-b color-black" type="text" name="name" onChange={event => this.setState({ userName: event.target.value})}></input>
@@ -33,6 +31,20 @@ class AutorizationForm extends React.Component {
 
 					<label className="w-full mb-6 flex flex-col-reverse">
 
+						<input className="pointer-events-all h-9 text-lg outline-none border-b-orange-400 border-b color-black" type="text" name="name" onChange={event => this.setState({ userName: event.target.value})}></input>
+						<div className="text-sm uppercase font-medium mb-1.5">Ваша почта:</div>
+
+					</label>
+
+					<label className="w-full mb-6 flex flex-col-reverse">
+
+						<input className="pointer-events-all h-9 text-lg outline-none border-b-orange-400 border-b color-black" type="text" name="name" onChange={event => this.setState({ userName: event.target.value})}></input>
+						<div className="text-sm uppercase font-medium mb-1.5">Ваш адрес:</div>
+
+					</label>
+
+					<label className="w-full mb-6 flex flex-col-reverse">
+
 						<input className="pointer-events-all h-9 text-lg outline-none border-b-orange-400 border-b color-black" type="text" name="password" onChange={event => this.setState({ userPassword: event.target.value})} />
 						<div className="text-sm uppercase font-medium mb-1.5">Ваш пароль:</div>
 
@@ -40,7 +52,11 @@ class AutorizationForm extends React.Component {
 
 					<button className="w-full h-11 flex items-center justify-center border-solid border cursor-pointer uppercase border-grey-400 bg-orange-400 rounded-md"
 						type="submit" 
-						onClick={(e) => { this.postUserData(e); this.closePopup(); }}>Зарегистрироваться</button>
+						onClick={(e) => {
+							this.postUserData(e);
+							this.closePopup(); 
+							this.myForm.reset();
+						}}>Зарегистрироваться</button>
 				</form>
 			</div>
 		);
@@ -48,15 +64,16 @@ class AutorizationForm extends React.Component {
 
 	postUserData(e) {
 		e.preventDefault();
-		// axios({
-		// 	method: "POST",
-		// 	url: "http://localhost:3001/users",
-		// 	data: {
-		// 		name: "alesha",
-		// 		lastName: "Aleshevich"
-		// 	}
+		axios({
+			method: "POST",
+			url: "http://localhost:3000/users",
+			data: {
+				firstName: this.state.userName,
+				lastName: this.state.userLastName,
+				password: this.state.userPassword,
+			}
 
-		// }).then((resp) => console.log(resp.data));
+		}).then((resp) => console.log(resp.data));
 		console.log("userData posted");
 		console.log(this.state);
 	}

@@ -10,8 +10,8 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 					<p>{ingridients}</p>
 				</div>
 				<div className="absolute flex text-end bottom-3 right-3 flex-auto">
-					<div className="text-[#FF7010] pt-3 pr-4 text-left font-semibold">от {price} ₽</div>
-					<button className="bg-[#FF7010] px-5 py-2.5 text-white text-base rounded ">Выбрать</button>
+					<div className="text-[#FF7010] pt-3 pr-4 text-left font-semibold ">от {price} ₽</div>
+					<button className="bg-[#FF7010] px-5 py-1 text-white text-base rounded transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">Выбрать</button>
 				</div>
 			</div>
 	);

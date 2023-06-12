@@ -29,7 +29,7 @@ const Footer = ({trademark}) => {
 
 			<div className="flex flex-col w-1/5">
 				<b className="text-base mb-2">Контакты</b>
-				<a className="flex flex-row mb-2" href="tel:+79262231011"><img src="footer/phone.png" className="mr-1"></img>+7 (926) 223-10-11</a>
+				<a className="flex flex-row whitespace-nowrap mb-2" href="tel:+79262231011"><img src="footer/phone.png" className="mr-1"></img>+7 (926) 223-10-11</a>
 				<a className="flex flex-row whitespace-nowrap mb-2" href="*"><img src="footer/placeSign.png" className="mr-1"></img>Угрешская ул., 14, Москва, 115088</a>
 				<a className="flex flex-row mb-2" href="*"><img src="footer/facebookLogo.png" className="mr-1"></img>Facebook</a>
 				<a className="flex flex-row mb-2" href="*"><img src="footer/instagramLogo.png" className="mr-1"></img>Instagram</a>
