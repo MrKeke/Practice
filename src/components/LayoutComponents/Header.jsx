@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import {Button, Layout, Modal} from "antd";
-import {ShoppingCartOutlined, UserOutlined} from "@ant-design/icons";
+import {ShoppingCartOutlined} from "@ant-design/icons";
 import {useScrollDirection} from "../handlers/ScrollHandler"
 import CitiesSelect from "../CitiesSelect";
 import CartComponent from "../CartComponent";
+import AutorizationButton from "./AutorizationButton";
 
 export const HeaderComponent = () => {
   const scrollDirection = useScrollDirection();
@@ -32,7 +33,7 @@ export const HeaderComponent = () => {
             <div className="mx-20 flex flex-row items-center flex-nowrap">
               <p className='text-black font-bold grow'>Hexlet Pizza</p>
               <Button onClick={showModal} type="text" className="bg-orange-400 text-gray-50 hover:bg-orange-400" icon={<ShoppingCartOutlined />}>Корзина</Button>
-              <Button type="text" className='bg-orange-400 text-gray-50 ml-3 text-center' icon={<UserOutlined />}></Button>
+              <AutorizationButton></AutorizationButton>
                 <Modal className="mr-0" title="Корзина" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}
                        footer={[
                          <Button type="text" className="bg-orange-400 text-white" key="submit" onClick={handleOk}>
