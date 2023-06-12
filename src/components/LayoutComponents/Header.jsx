@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import {Button, Layout, Modal} from "antd";
-import AutorizationButton from "./AutorizationButton";
 import {ShoppingCartOutlined} from "@ant-design/icons";
-import {useScrollDirection} from "../handlers/ScrollHandler";
+import {useScrollDirection} from "../handlers/ScrollHandler"
 import CitiesSelect from "../CitiesSelect";
-import BusketComponent from "../BasketComponent";
+import CartComponent from "../CartComponent";
+import AutorizationButton from "./AutorizationButton";
 
 export const HeaderComponent = () => {
-	const scrollDirection = useScrollDirection();
+  const scrollDirection = useScrollDirection();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -20,8 +20,8 @@ export const HeaderComponent = () => {
     setIsModalOpen(false);
   };
 
-	return(
-		<div className={`bg-white sticky top-0 h-20 z-20 w-full ${ scrollDirection === "down" ? "-top-20" : "top-0"}`}>
+  return(
+    <div className={`bg-white sticky top-0 h-20 z-20 w-full ${ scrollDirection === "down" ? "-top-20" : "top-0"}`}>
         <div>
           <div className={`mx-16 h-8 flex flex-row items-center flex-nowrap  `}>
               <CitiesSelect />
@@ -40,12 +40,12 @@ export const HeaderComponent = () => {
                            Перейти к оплате
                          </Button>
                        ]}>
-                  <BusketComponent />
+                  <CartComponent />
                 </Modal>
 
             </div>
           </div>
         </div>
     </div>
-	);
-};
+  )
+}

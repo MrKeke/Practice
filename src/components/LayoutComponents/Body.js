@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { NavGen } from "../NavGen";
 import { Layout } from "antd";
 import { Product } from "../product/Product";
@@ -9,7 +9,7 @@ const { Content } = Layout;
 
 const navLinks = [
 	{
-		name: "Пицца",
+		name: "Пиццы",
 		icon: '/nav/pizza.jpg',
 	},
 	{
@@ -38,15 +38,38 @@ const navLinks = [
 	},
 ];
 
-const getItems = async () => {
-	return (await axios.get("http://localhost:3000/pizza")).data;
-};
+const getData = async () => {
+	const pizzasData = (await axios.get("http://localhost:3000/pizza")).data;
+	const sushiData = (await axios.get("http://localhost:3000/sushi")).data;
+	const drinksData = (await axios.get("http://localhost:3000/drinks")).data;
+	const dessertsData = (await axios.get("http://localhost:3000/desserts")).data;
+	const comboData = (await axios.get("http://localhost:3000/combo")).data;
+	const snacksData = (await axios.get("http://localhost:3000/snacks")).data;
+	const saucesData = (await axios.get("http://localhost:3000/sauces")).data;
+	return {pizzasData, sushiData, drinksData, dessertsData, comboData, snacksData, saucesData}
+}
 
-export const BodyComponent = ({ children }) => {
-	const [items, setItems] = useState([]);
+
+export const BodyComponent = () => {
+
+	const [pizzas, setPizzasItem] = useState([]);
+	const [sushi, setSushiItem] = useState([])
+	const [drinks, setDrinksItem] = useState([])
+	const [snacks, setSnacksItem] = useState([])
+	const [combo, setComboItem] = useState([])
+	const [desserts, setDessertsItem] = useState([])
+	const [sauces, setSaucesItem] = useState([])
 
 	useEffect(() => {
-		getItems().then(d => setItems(d));
+		getData().then(e => {
+			setPizzasItem(e.pizzasData)
+			setSaucesItem(e.saucesData)
+			setSushiItem(e.sushiData)
+			setDessertsItem(e.dessertsData)
+			setComboItem(e.comboData)
+			setDrinksItem(e.drinksData)
+			setSnacksItem(e.snacksData)
+		})
 	}, []);
 
 	return (
@@ -66,14 +89,55 @@ export const BodyComponent = ({ children }) => {
 					<NavGen navLinks={navLinks} />
 				</div>
 
-				<div className="mx-auto max-w-[1200px]">
+				<div className="mx-auto max-w-[1200px]" >
 					<h1 className="pb-6 text-3xl font-bold font-dosis">Пиццы</h1>
 					<div className="grid grid-cols-4 gap-8">
-						{items.map(el => <Product {...el}/>)}
+						{pizzas.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px]">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Суши</h1>
+					<div className="grid grid-cols-4 gap-8">
+						{sushi.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Напитки</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{drinks.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Снэки</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{snacks.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Комбо</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{combo.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Десерты</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{desserts.map(el => <Product {...el}/>)}
+					</div>
+				</div>
+
+				<div className="mx-auto max-w-[1200px] ">
+					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Соусы</h1>
+					<div className="grid grid-cols-4 gap-8 text-start">
+						{sauces.map(el => <Product {...el}/>)}
 					</div>
 				</div>
 			</div>
-			{children}
 		</Content>
 	);
 };
