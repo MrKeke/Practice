@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { NavGen } from "../NavGen";
 import { Layout } from "antd";
 import { Product } from "../product/Product";
@@ -9,7 +9,7 @@ const { Content } = Layout;
 
 const navLinks = [
 	{
-		name: "Пицца",
+		name: "Пиццы",
 		icon: '/nav/pizza.jpg',
 	},
 	{
@@ -38,36 +38,20 @@ const navLinks = [
 	},
 ];
 
-const getPizzas = async () => {
-	return (await axios.get("http://localhost:3000/pizza")).data;
-};
-
-const getSushi = async () => {
-	return (await axios.get("http://localhost:3000/sushi")).data;
-};
-
-const getDrinks = async () => {
-	return (await axios.get("http://localhost:3000/drinks")).data;
-};
-
-const getSnacks = async () => {
-	return (await axios.get("http://localhost:3000/snacks")).data;
-};
-
-const getCombo = async () => {
-	return (await axios.get("http://localhost:3000/combo")).data;
-};
-
-const getDesserts = async () => {
-	return (await axios.get("http://localhost:3000/desserts")).data;
-};
-
-const getSauces = async () => {
-	return (await axios.get("http://localhost:3000/sauces")).data;
-};
+const getData = async () => {
+	const pizzasData = (await axios.get("http://localhost:3000/pizza")).data;
+	const sushiData = (await axios.get("http://localhost:3000/sushi")).data;
+	const drinksData = (await axios.get("http://localhost:3000/drinks")).data;
+	const dessertsData = (await axios.get("http://localhost:3000/desserts")).data;
+	const comboData = (await axios.get("http://localhost:3000/combo")).data;
+	const snacksData = (await axios.get("http://localhost:3000/snacks")).data;
+	const saucesData = (await axios.get("http://localhost:3000/sauces")).data;
+	return {pizzasData, sushiData, drinksData, dessertsData, comboData, snacksData, saucesData}
+}
 
 
 export const BodyComponent = () => {
+
 	const [pizzas, setPizzasItem] = useState([]);
 	const [sushi, setSushiItem] = useState([])
 	const [drinks, setDrinksItem] = useState([])
@@ -77,25 +61,15 @@ export const BodyComponent = () => {
 	const [sauces, setSaucesItem] = useState([])
 
 	useEffect(() => {
-		getPizzas().then(d => setPizzasItem(d));
-	}, []);
-	useEffect(() => {
-		getSushi().then(d => setSushiItem(d));
-	}, []);
-	useEffect(() => {
-		getDrinks().then(d => setDrinksItem(d));
-	}, []);
-	useEffect(() => {
-		getSnacks().then(d => setSnacksItem(d));
-	}, []);
-	useEffect(() => {
-		getCombo().then(d => setComboItem(d));
-	}, []);
-	useEffect(() => {
-		getDesserts().then(d => setDessertsItem(d));
-	}, []);
-	useEffect(() => {
-		getSauces().then(d => setSaucesItem(d));
+		getData().then(e => {
+			setPizzasItem(e.pizzasData)
+			setSaucesItem(e.saucesData)
+			setSushiItem(e.sushiData)
+			setDessertsItem(e.dessertsData)
+			setComboItem(e.comboData)
+			setDrinksItem(e.drinksData)
+			setSnacksItem(e.snacksData)
+		})
 	}, []);
 
 	return (
@@ -115,7 +89,7 @@ export const BodyComponent = () => {
 					<NavGen navLinks={navLinks} />
 				</div>
 
-				<div className="mx-auto max-w-[1200px]">
+				<div className="mx-auto max-w-[1200px]" >
 					<h1 className="pb-6 text-3xl font-bold font-dosis">Пиццы</h1>
 					<div className="grid grid-cols-4 gap-8">
 						{pizzas.map(el => <Product {...el}/>)}
