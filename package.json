@@ -19,7 +19,8 @@
   },
   "scripts": {
     "start": "concurrently \"npm run start-backend\" \"npm run start-front\"",
-    "start-front": "PORT=3001 react-scripts start",
+    "start-front": "set PORT=3001 react-scripts start",
+    "start-def": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint src/*",
     "lint-fix": "eslint src/* --fix",

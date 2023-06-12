@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import {message} from "antd";
 
 
 export const Product = ({ id, price, name, ingridients,img }) => {
@@ -34,21 +33,21 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 		return dbValidName
 	}
 
+
  	const idFinder = async (id, e) => {
+
 		const fieldName = e.target.parentNode.parentNode.parentNode.parentNode.firstChild.textContent
 		const validName = dbNameValidator(fieldName)
-		const idsElements = await axios.get("http://localhost:3000/selectedItems").then(el => el.data.map(e => e.id))
+		const idChecker = await axios.get("http://localhost:3000/selectedItems").then(el => el.data.map(el => el.id))
 		const getReq = await axios.get(`http://localhost:3000/${validName}`).then(e => e.data.map(el => {
-			if(id === el.id && !idsElements.includes(el.id)){
-					axios.post(`http://localhost:3000/selectedItems/`, el)
+			if(id === el.id && !idChecker.includes(el.id)){
+					axios.post("http://localhost:3000/selectedItems", el)
 			}
 		}))
-		console.log(axios.get("http://localhost:3000/selectedItems"))
 	}
 
 
 	return (
-		<>
 			<div id={id} key={id} className="relative p-3 bg-white h-[500px] text-base rounded flex flex-col gap-6 hover:cursor-pointer">
 				<div >
 					<div className="h-64">
@@ -62,6 +61,5 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 					<button onClick={(e) => idFinder(id, e)} className="bg-[#FF7010] px-5 py-1 text-white text-base rounded transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">Выбрать</button>
 				</div>
 			</div>
-		</>
 	);
 };
