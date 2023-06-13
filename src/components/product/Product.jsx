@@ -33,23 +33,17 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 		return dbValidName
 	}
 
-	// const selectedItemsChecker = async (id) => {
-	// 		const resp = await axios.get("http://localhost:3000/selectedItems").then(el => el.data.map(el => el.id === id))
-	// 		resp.then()
-	// }
 
  	const idFinder = async (id, e) => {
 
-		console.log(id)
 		const fieldName = e.target.parentNode.parentNode.parentNode.parentNode.firstChild.textContent
 		const validName = dbNameValidator(fieldName)
-		const selectedItemsList = axios.get("http://localhost:3000/selectedItems").then(el => console.log(el.data))
+		const idChecker = await axios.get("http://localhost:3000/selectedItems").then(el => el.data.map(el => el.id))
 		const getReq = await axios.get(`http://localhost:3000/${validName}`).then(e => e.data.map(el => {
-			if(id === el.id ){
+			if(id === el.id && !idChecker.includes(el.id)){
 					axios.post("http://localhost:3000/selectedItems", el)
 			}
 		}))
-		console.log(selectedItemsList)
 	}
 
 

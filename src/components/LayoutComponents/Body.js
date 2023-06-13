@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { NavGen } from "../NavGen";
-import { Layout } from "antd";
+import { Layout, message } from "antd";
 import { Product } from "../product/Product";
 import axios from "axios";
 import ModalHandler from "../handlers/ModalHandler";
@@ -49,7 +49,6 @@ const getData = async () => {
 	return {pizzasData, sushiData, drinksData, dessertsData, comboData, snacksData, saucesData}
 }
 
-
 export const BodyComponent = () => {
 
 	const [pizzas, setPizzasItem] = useState([]);
@@ -73,72 +72,75 @@ export const BodyComponent = () => {
 	}, []);
 
 	return (
-		<Content
-			className="site-layout"
-			style={{
-				padding: "0 50px",
-			}}
-		>
-			<div
+		<>
+			<Content
+				className="site-layout"
 				style={{
-					padding: 24,
-					minHeight: 380,
+					padding: "0 50px",
 				}}
 			>
-				<div className="flex justify-between pb-8 mx-auto max-w-[1200px] my-0">
-					<NavGen navLinks={navLinks} />
-				</div>
+				<div
+					style={{
+						padding: 24,
+						minHeight: 380,
+					}}
+				>
+					<div className="flex justify-between pb-8 mx-auto max-w-[1200px] my-0">
+						<NavGen navLinks={navLinks} />
+					</div>
 
-				<div className="mx-auto max-w-[1200px]" >
-					<h1 className="pb-6 text-3xl font-bold font-dosis">Пиццы</h1>
-					<div className="grid grid-cols-4 gap-8">
-						{pizzas.map(el => <Product {...el}/>)}
+
+					<div className="mx-auto max-w-[1200px]" >
+						<h1 className="pb-6 text-3xl font-bold font-dosis">Пиццы</h1>
+						<div className="grid grid-cols-4 gap-8">
+							{pizzas.map(el => <Product {...el} />)}
+						</div>
+					</div>
+
+					<div className="mx-auto max-w-[1200px]">
+						<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Суши</h1>
+						<div className="grid grid-cols-4 gap-8">
+							{sushi.map(el => <Product {...el}/>)}
+						</div>
+					</div>
+
+					<div className="mx-auto max-w-[1200px] ">
+						<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Напитки</h1>
+						<div className="grid grid-cols-4 gap-8 text-start">
+							{drinks.map(el => <Product {...el}/>)}
+						</div>
+					</div>
+
+					<div className="mx-auto max-w-[1200px] ">
+						<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Снэки</h1>
+						<div className="grid grid-cols-4 gap-8 text-start">
+							{snacks.map(el => <Product {...el}/>)}
+						</div>
+					</div>
+
+					<div className="mx-auto max-w-[1200px] ">
+						<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Комбо</h1>
+						<div className="grid grid-cols-4 gap-8 text-start">
+							{combo.map(el => <Product {...el}/>)}
+						</div>
+					</div>
+
+					<div className="mx-auto max-w-[1200px] ">
+						<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Десерты</h1>
+						<div className="grid grid-cols-4 gap-8 text-start">
+							{desserts.map(el => <Product {...el}/>)}
+						</div>
+					</div>
+
+					<div className="mx-auto max-w-[1200px] ">
+						<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Соусы</h1>
+						<div className="grid grid-cols-4 gap-8 text-start">
+							{sauces.map(el => <Product {...el}/>)}
+						</div>
 					</div>
 				</div>
-
-				<div className="mx-auto max-w-[1200px]">
-					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Суши</h1>
-					<div className="grid grid-cols-4 gap-8">
-						{sushi.map(el => <Product {...el}/>)}
-					</div>
-				</div>
-
-				<div className="mx-auto max-w-[1200px] ">
-					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Напитки</h1>
-					<div className="grid grid-cols-4 gap-8 text-start">
-						{drinks.map(el => <Product {...el}/>)}
-					</div>
-				</div>
-
-				<div className="mx-auto max-w-[1200px] ">
-					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Снэки</h1>
-					<div className="grid grid-cols-4 gap-8 text-start">
-						{snacks.map(el => <Product {...el}/>)}
-					</div>
-				</div>
-
-				<div className="mx-auto max-w-[1200px] ">
-					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Комбо</h1>
-					<div className="grid grid-cols-4 gap-8 text-start">
-						{combo.map(el => <Product {...el}/>)}
-					</div>
-				</div>
-
-				<div className="mx-auto max-w-[1200px] ">
-					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Десерты</h1>
-					<div className="grid grid-cols-4 gap-8 text-start">
-						{desserts.map(el => <Product {...el}/>)}
-					</div>
-				</div>
-
-				<div className="mx-auto max-w-[1200px] ">
-					<h1 className="pb-6 mt-10 text-3xl font-bold font-dosis">Соусы</h1>
-					<div className="grid grid-cols-4 gap-8 text-start">
-						{sauces.map(el => <Product {...el}/>)}
-					</div>
-				</div>
-			</div>
-		</Content>
+			</Content>
+		</>
 	);
 };
 
