@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { NavGen } from "../NavGen";
-import { Layout, message } from "antd";
+import { Layout } from "antd";
 import { Product } from "../product/Product";
-import axios from "axios";
-import ModalHandler from "../handlers/ModalHandler";
 const { Content } = Layout;
+import {getData} from "../../utils/requests";
 
 
 const navLinks = [
@@ -37,17 +36,6 @@ const navLinks = [
 		icon: "/nav/sauce.jpg",
 	},
 ];
-
-const getData = async () => {
-	const pizzasData = (await axios.get("http://localhost:3000/pizza")).data;
-	const sushiData = (await axios.get("http://localhost:3000/sushi")).data;
-	const drinksData = (await axios.get("http://localhost:3000/drinks")).data;
-	const dessertsData = (await axios.get("http://localhost:3000/desserts")).data;
-	const comboData = (await axios.get("http://localhost:3000/combo")).data;
-	const snacksData = (await axios.get("http://localhost:3000/snacks")).data;
-	const saucesData = (await axios.get("http://localhost:3000/sauces")).data;
-	return {pizzasData, sushiData, drinksData, dessertsData, comboData, snacksData, saucesData}
-}
 
 export const BodyComponent = () => {
 

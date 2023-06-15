@@ -1,9 +1,7 @@
-import {Button, Modal} from "antd";
 import {useEffect, useState} from 'react';
 import axios from "axios";
+import {Card} from "antd";
 import { LoadingOutlined, CloseOutlined } from '@ant-design/icons';
-import _ from "lodash"
-import { Spin } from 'antd';
 
 const getData = async () => {
   return await axios.get("http://localhost:3000/selectedItems")
@@ -20,6 +18,7 @@ const CartComponent = () => {
   );
 
   const [values, setValues] = useState([])
+  const empty = values.length < 1
 
 
   useEffect(() => {
@@ -28,30 +27,35 @@ const CartComponent = () => {
     }, 1000)
     }, [values])
 
-  const remover = id => {
+  const remover = async id => {
     const removeItems = values.filter(item => item.id !== id)
-    const idsItems = getData().then(el => el.map(e => e.id))
-    // axios.delete("http://localhost:3000/selectedItems", )
-    console.log(idsItems)
+    await axios.delete("http://localhost:3000/selectedItems/" + id)
     setValues([...removeItems])
   }
+
+  const totalPrice = () => {
+    const total = values.reduce((acc, curr) => {return acc + curr.price}, 0)
+    return total
+  }
+
 
   return (
     <>
       <div className="">
-        {values.length < 1 ? <div>Тут пока пусто</div> : null}
+        {empty ? <div>Тут пока пусто</div> : null}
         {values.map(el => {
           return(
-            <div key={el.id} id={el.id} className="flex border-b-2 mb-2 relative py-3.5">
-              <img className="w-20" src={el.img} alt="none"/>
-              <div className="pl-2">{el.name}</div>
-              <div className="absolute bottom-0 right-0 font-bold">{el.price} ₽</div>
-              <button className="absolute top-0 right-0" onClick={() => remover(el.id)}><CloseOutlined /></button>
-            </div>
-
+            <Card key={el.id} id={el.id} className="flex mb-2 h-32 relative py-3.5">
+              <img className="w-24 absolute left-2 top-2" src={el.img} alt="none"/>
+              <div className="pl-2 absolute left-28 top-5 font-bold">{el.name}</div>
+              <div className="absolute bottom-3 right-5 font-bold">{el.price} ₽</div>
+              <button className="absolute top-2 right-5" onClick={() => remover(el.id)}><CloseOutlined /></button>
+            </Card>
           )
         })}
-
+        {!empty ? <div className="border-t-2 mt-7 relative">
+          <span className="font-bold left-0 absolute mt-2">Сумма заказа {totalPrice()} ₽</span>
+        </div> : null}
       </div>
     </>
   )

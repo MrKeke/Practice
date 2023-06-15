@@ -1,27 +1,28 @@
-import React, {useState} from "react";
-import {Button, Layout, Modal} from "antd";
+import React, {useState, useEffect} from "react";
+import {Button, Modal} from "antd";
 import {ShoppingCartOutlined} from "@ant-design/icons";
-import {useScrollDirection} from "../handlers/ScrollHandler"
 import CitiesSelect from "../CitiesSelect";
 import CartComponent from "../CartComponent";
 import AutorizationButton from "./AutorizationButton";
 
 export const HeaderComponent = () => {
-  const scrollDirection = useScrollDirection();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const showModal = () => {
     setIsModalOpen(true);
   };
+
   const handleOk = () => {
     setIsModalOpen(false);
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
 
   return(
-    <div className={`bg-white sticky top-0 h-20 z-20 w-full ${ scrollDirection === "down" ? "-top-20" : "top-0"}`}>
+    <div className="bg-white sticky top-0 h-20 z-20 w-full">
         <div>
           <div className={`mx-16 h-8 flex flex-row items-center flex-nowrap  `}>
               <CitiesSelect />
@@ -42,7 +43,6 @@ export const HeaderComponent = () => {
                        ]}>
                   <CartComponent />
                 </Modal>
-
             </div>
           </div>
         </div>

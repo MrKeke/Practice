@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import {Alert} from "antd";
+import {selectedItems} from "../../utils/requests";
 
 
 export const Product = ({ id, price, name, ingridients,img }) => {
@@ -38,11 +40,11 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 
 		const fieldName = e.target.parentNode.parentNode.parentNode.parentNode.firstChild.textContent
 		const validName = dbNameValidator(fieldName)
-		const idChecker = await axios.get("http://localhost:3000/selectedItems").then(el => el.data.map(el => el.id))
+		const idChecker = await axios.get(selectedItems).then(el => el.data.map(el => el.id))
 		const getReq = await axios.get(`http://localhost:3000/${validName}`).then(e => e.data.map(el => {
 			if(id === el.id && !idChecker.includes(el.id)){
-					axios.post("http://localhost:3000/selectedItems", el)
-					console.log('ADDED')
+					axios.post(selectedItems, el)
+
 			}
 		}))
 	}
