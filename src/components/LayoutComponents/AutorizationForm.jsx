@@ -7,6 +7,8 @@ class AutorizationForm extends React.Component {
 		this.state = {
 			userName: "",
 			userLastName: "",
+			mail: "",
+			address: "",
 			userPassword: 0,
 		};
 	}
@@ -31,14 +33,14 @@ class AutorizationForm extends React.Component {
 
 					<label className="w-full mb-6 flex flex-col-reverse">
 
-						<input className="pointer-events-all h-9 text-lg outline-none border-b-orange-400 border-b color-black" type="text" name="name" onChange={event => this.setState({ userName: event.target.value})}></input>
+						<input className="pointer-events-all h-9 text-lg outline-none border-b-orange-400 border-b color-black" type="text" name="name" onChange={event => this.setState({ mail: event.target.value})}></input>
 						<div className="text-sm uppercase font-medium mb-1.5">Ваша почта:</div>
 
 					</label>
 
 					<label className="w-full mb-6 flex flex-col-reverse">
 
-						<input className="pointer-events-all h-9 text-lg outline-none border-b-orange-400 border-b color-black" type="text" name="name" onChange={event => this.setState({ userName: event.target.value})}></input>
+						<input className="pointer-events-all h-9 text-lg outline-none border-b-orange-400 border-b color-black" type="text" name="name" onChange={event => this.setState({ address: event.target.value})}></input>
 						<div className="text-sm uppercase font-medium mb-1.5">Ваш адрес:</div>
 
 					</label>
@@ -70,6 +72,8 @@ class AutorizationForm extends React.Component {
 			data: {
 				firstName: this.state.userName,
 				lastName: this.state.userLastName,
+				mail: this.state.mail,
+				address: this.state.address,
 				password: this.state.userPassword,
 			}
 
