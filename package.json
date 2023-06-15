@@ -21,6 +21,7 @@
     "start": "concurrently \"npm run start-backend\" \"npm run start-front\"",
     "start-front": "cross-env PORT=3001 react-scripts start",
     "build": "react-scripts build",
+    "start-def": "react-scripts start",
     "lint": "eslint src/*",
     "lint-fix": "eslint src/* --fix",
     "start-backend": "json-server --watch db.json"

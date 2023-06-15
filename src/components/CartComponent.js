@@ -38,7 +38,6 @@ const CartComponent = () => {
 
   return (
     <>
-      {/*доделаю загрузку либо переделаю секундный запрос*/}
       <div className="">
         {values.length < 1 ? <div>Тут пока пусто</div> : null}
         {values.map(el => {
