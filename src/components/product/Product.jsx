@@ -42,6 +42,7 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 		const getReq = await axios.get(`http://localhost:3000/${validName}`).then(e => e.data.map(el => {
 			if(id === el.id && !idChecker.includes(el.id)){
 					axios.post("http://localhost:3000/selectedItems", el)
+					console.log('ADDED')
 			}
 		}))
 	}
