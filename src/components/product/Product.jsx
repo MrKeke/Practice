@@ -41,7 +41,7 @@ export const Product = ({ id, price, name, ingridients,img }) => {
 		const fieldName = e.target.parentNode.parentNode.parentNode.parentNode.firstChild.textContent
 		const validName = dbNameValidator(fieldName)
 		const idChecker = await axios.get(selectedItems).then(el => el.data.map(el => el.id))
-		const getReq = await axios.get(`http://localhost:3000/${validName}`).then(e => e.data.map(el => {
+		await axios.get(`http://localhost:3000/${validName}`).then(e => e.data.map(el => {
 			if(id === el.id && !idChecker.includes(el.id)){
 					axios.post(selectedItems, el)
 

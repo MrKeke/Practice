@@ -1,31 +1,27 @@
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import {Card} from "antd";
-import { LoadingOutlined, CloseOutlined } from '@ant-design/icons';
+import {CloseOutlined } from '@ant-design/icons';
 
 const getData = async () => {
-  return await axios.get("http://localhost:3000/selectedItems")
+  return await axios.get("http://localhost:3000/selectedItems");
 }
 
 const CartComponent = () => {
-  const antIcon = (
-    <LoadingOutlined
-      style={{
-        fontSize: 24,
-      }}
-      spin
-    />
-  );
 
   const [values, setValues] = useState([])
   const empty = values.length < 1
 
-
   useEffect(() => {
-    setTimeout(() => {
-      getData().then(el => setValues([...el.data]))
-    }, 1000)
-    }, [values])
+    const fetchData = async () => {
+      const response = await getData();
+      setValues([...response.data]);
+    };
+    fetchData();
+    const interval = setInterval(fetchData, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const remover = async id => {
     const removeItems = values.filter(item => item.id !== id)
@@ -37,7 +33,6 @@ const CartComponent = () => {
     const total = values.reduce((acc, curr) => {return acc + curr.price}, 0)
     return total
   }
-
 
   return (
     <>
@@ -60,6 +55,5 @@ const CartComponent = () => {
     </>
   )
 }
-
 
 export default CartComponent
