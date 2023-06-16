@@ -1,15 +1,15 @@
 import React from "react";
-import _ from 'lodash'
+import _ from "lodash"
 
 export const NavGen = ({navLinks}) => {
-  
+
   return(
     <>
-    {navLinks.map(({name, icon,ref}) => {
-      console.log(ref)
-      const handleClick = () => {
-        ref.current.scrollIntoView({ behavior: 'smooth' });
-      }
+      {navLinks.map(({name, icon,ref}) => {
+        console.log(ref)
+        const handleClick = () => {
+          ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
         const id = _.uniqueId()
         return(
           <React.Fragment key={id}>

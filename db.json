@@ -269,20 +269,7 @@
     }
   ],
   "selectedItems": [
-    {
-      "id": 36,
-      "price": 100,
-      "name": "Барбекю соус",
-      "ingridients": "Барбекю соус",
-      "img": "sauces/brown.webp"
-    },
-    {
-      "id": 35,
-      "price": 100,
-      "name": "Джем",
-      "ingridients": "Джем",
-      "img": "sauces/jami.webp"
-    }
+
   ],
   "users": []
 }

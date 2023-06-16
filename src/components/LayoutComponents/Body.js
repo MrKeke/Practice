@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState,useRef } from "react";
 import { NavGen } from "../NavGen";
 import { Layout } from "antd";
@@ -6,55 +7,53 @@ const { Content } = Layout;
 import {getData} from "../../utils/requests";
 
 
-
-
 export const BodyComponent = () => {
 
-const pizzaRef = useRef(null)
-const sushiRef = useRef(null)
-const drinksRef = useRef(null)
-const comboRef = useRef(null)
-const snackRef = useRef(null)
-const dessertRef = useRef(null)
-const sauceRef = useRef(null)
+	const pizzaRef = useRef(null)
+	const sushiRef = useRef(null)
+	const drinksRef = useRef(null)
+	const comboRef = useRef(null)
+	const snackRef = useRef(null)
+	const dessertRef = useRef(null)
+	const sauceRef = useRef(null)
 
-const navLinks = [
-	{
-		name: "Пиццы",
-		icon: '/nav/pizza.jpg',
-		ref:pizzaRef
-	},
-	{
-		name: "Суши",
-		icon: '/nav/sushi.jpg',
-		ref:sushiRef
-	},
-	{
-		name: "Напитки",
-		icon: "/nav/drink.jpg",
-		ref:drinksRef
-	},
-	{
-		name: "Снэки",
-		icon: "/nav/snack.jpg",
-		ref:snackRef
-	},
-	{
-		name: "Комбо",
-		icon: "/nav/combo.jpg",
-		ref:comboRef
-	},
-	{
-		name: "Десерты",
-		icon: "/nav/dessert.jpg",
-		ref:dessertRef
-	},
-	{
-		name: "Соусы",
-		icon: "/nav/sauce.jpg",
-		ref:sauceRef
-	},
-];
+	const navLinks = [
+		{
+			name: "Пиццы",
+			icon: '/nav/pizza.jpg',
+			ref:pizzaRef
+		},
+		{
+			name: "Суши",
+			icon: '/nav/sushi.jpg',
+			ref:sushiRef
+		},
+		{
+			name: "Напитки",
+			icon: "/nav/drink.jpg",
+			ref:drinksRef
+		},
+		{
+			name: "Снэки",
+			icon: "/nav/snack.jpg",
+			ref:snackRef
+		},
+		{
+			name: "Комбо",
+			icon: "/nav/combo.jpg",
+			ref:comboRef
+		},
+		{
+			name: "Десерты",
+			icon: "/nav/dessert.jpg",
+			ref:dessertRef
+		},
+		{
+			name: "Соусы",
+			icon: "/nav/sauce.jpg",
+			ref:sauceRef
+		},
+	];
 
 	const [pizzas, setPizzasItem] = useState([]);
 	const [sushi, setSushiItem] = useState([])
@@ -148,4 +147,3 @@ const navLinks = [
 		</>
 	);
 };
-
