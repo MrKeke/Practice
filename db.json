@@ -268,8 +268,22 @@
       "img": "sauces/brown.webp"
     }
   ],
+<<<<<<< HEAD
   "selectedItems": [
 
   ],
   "users": []
+=======
+  "selectedItems": [],
+  "users": [
+    {
+      "firstName": "",
+      "lastName": "",
+      "mail": "",
+      "address": "",
+      "password": 0,
+      "id": 1
+    }
+  ]
+>>>>>>> ead90d0 (some change)
 }
