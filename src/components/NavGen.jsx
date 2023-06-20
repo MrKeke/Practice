@@ -5,18 +5,11 @@ export const NavGen = ({navLinks}) => {
 
   return(
     <>
-<<<<<<< HEAD
       {navLinks.map(({name, icon,ref}) => {
         console.log(ref)
         const handleClick = () => {
           ref.current.scrollIntoView({ behavior: 'smooth' });
         }
-=======
-    {navLinks.map(({name, icon,ref}) => { 
-      const handleClick = () => {
-        ref.current.scrollIntoView({ behavior: 'smooth' });
-      }
->>>>>>> ead90d0 (some change)
         const id = _.uniqueId()
         return(
           <React.Fragment key={id}>
