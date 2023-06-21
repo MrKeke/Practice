@@ -6,6 +6,14 @@ import "swiper/css";
 import { NavGen } from "components/NavGen";
 
 export const BodyComponent = () => {
+	const [windowSize, setWindowSize] = useState(innerWidth);
+
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			setWindowSize(innerWidth);
+		});
+	}, []);
+
 	const pizzaRef = useRef(null);
 	const sushiRef = useRef(null);
 	const drinksRef = useRef(null);
@@ -54,7 +62,7 @@ export const BodyComponent = () => {
 
 	const linksCoun = navLinks.length;
 	const itemLength = 128;
-	const containerWidth = innerWidth >= 1300 ? 1300 : innerWidth;
+	const containerWidth = windowSize >= 1300 ? 1300 : windowSize;
 	const calcSpaceBetween = containerWidth / linksCoun - itemLength;
 	const spaceBetween = calcSpaceBetween > 12 ? calcSpaceBetween : 12;
 
