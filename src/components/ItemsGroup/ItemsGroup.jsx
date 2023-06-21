@@ -1,12 +1,11 @@
 import { forwardRef } from "react";
 import { Product } from "../product/Product";
 
-export const ItemsGroup = forwardRef(({ items, title }, reference) => {
-	console.log(items, title);
+export const ItemsGroup = forwardRef(({ items, title }, ref) => {
 	return (
-		<div ref={reference} className="mx-auto max-w-[1200px]">
+		<div ref={ref}>
 			<h1 className="pb-6 text-3xl font-bold font-dosis">{title}</h1>
-			<div className="grid grid-cols-4 gap-8">
+			<div className="grid gap-8 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
 				{items.map((el) => (
 					<Product {...el} />
 				))}
