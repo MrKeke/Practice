@@ -56,7 +56,7 @@ export const BodyComponent = () => {
 	const itemLength = 128;
 	const containerWidth = innerWidth >= 1300 ? 1300 : innerWidth;
 	const calcSpaceBetween = containerWidth / linksCoun - itemLength;
-	const spaceBetween = calcSpaceBetween < 12 ? 12 : calcSpaceBetween;
+	const spaceBetween = calcSpaceBetween > 12 ? calcSpaceBetween : 12;
 
 	const [pizzas, setPizzasItem] = useState([]);
 	const [sushi, setSushiItem] = useState([]);
@@ -79,45 +79,53 @@ export const BodyComponent = () => {
 	}, []);
 
 	return (
-		<div className="max-w-[1300px] mx-auto px-[15px] box-border">
-			<div className="flex flex-col gap-8 py-8">
-				<Swiper slidesPerView={"auto"} spaceBetween={spaceBetween}>
-					<SwiperSlide style={{ width: "min-content" }}>
-						<NavGen name="Пиццы" icon="/nav/pizza.jpg" ref={pizzaRef} />
-					</SwiperSlide>
-					<SwiperSlide style={{ width: "min-content" }}>
-						<NavGen name="Суши" icon="/nav/sushi.jpg" ref={sushiRef} />
-					</SwiperSlide>
-					<SwiperSlide style={{ width: "min-content" }}>
-						<NavGen name="Напитки" icon="/nav/drink.jpg" ref={drinksRef} />
-					</SwiperSlide>
-					<SwiperSlide style={{ width: "min-content" }}>
-						<NavGen name="Комбо" icon="/nav/combo.jpg" ref={comboRef} />
-					</SwiperSlide>
-					<SwiperSlide style={{ width: "min-content" }}>
-						<NavGen name="Десерты" icon="/nav/dessert.jpg" ref={dessertRef} />
-					</SwiperSlide>
-					<SwiperSlide style={{ width: "min-content" }}>
-						<NavGen name="Соусы" icon="/nav/sauce.jpg" ref={sauceRef} />
-					</SwiperSlide>
-					<SwiperSlide style={{ width: "min-content" }}>
-						<NavGen name="Снэки" icon="/nav/snack.jpg" ref={snackRef} />
-					</SwiperSlide>
-				</Swiper>
-				<div className="flex flex-col gap-12">
-					<ItemsGroup items={pizzas} title={"Пиццы"} ref={pizzaRef} />
+		<div>
+			<div className="max-w-[1300px] px-[15px] box-border bg-blue-600 mx-auto">
+				<div className="flex flex-col gap-8 py-8 bg-green-400">
+					<div className="bg-orange-500">
+						<Swiper slidesPerView={"auto"} spaceBetween={spaceBetween}>
+							<SwiperSlide style={{ width: "min-content" }}>
+								<NavGen name="Пиццы" icon="/nav/pizza.jpg" ref={pizzaRef} />
+							</SwiperSlide>
+							<SwiperSlide style={{ width: "min-content" }}>
+								<NavGen name="Суши" icon="/nav/sushi.jpg" ref={sushiRef} />
+							</SwiperSlide>
+							<SwiperSlide style={{ width: "min-content" }}>
+								<NavGen name="Напитки" icon="/nav/drink.jpg" ref={drinksRef} />
+							</SwiperSlide>
+							<SwiperSlide style={{ width: "min-content" }}>
+								<NavGen name="Комбо" icon="/nav/combo.jpg" ref={comboRef} />
+							</SwiperSlide>
+							<SwiperSlide style={{ width: "min-content" }}>
+								<NavGen
+									name="Десерты"
+									icon="/nav/dessert.jpg"
+									ref={dessertRef}
+								/>
+							</SwiperSlide>
+							<SwiperSlide style={{ width: "min-content" }}>
+								<NavGen name="Соусы" icon="/nav/sauce.jpg" ref={sauceRef} />
+							</SwiperSlide>
+							<SwiperSlide style={{ width: "min-content" }}>
+								<NavGen name="Снэки" icon="/nav/snack.jpg" ref={snackRef} />
+							</SwiperSlide>
+						</Swiper>
+					</div>
+					<div className="flex flex-col gap-12 bg-slate-600">
+						<ItemsGroup items={pizzas} title={"Пиццы"} ref={pizzaRef} />
 
-					<ItemsGroup items={sushi} title={"Суши"} ref={sushiRef} />
+						<ItemsGroup items={sushi} title={"Суши"} ref={sushiRef} />
 
-					<ItemsGroup items={drinks} title={"Напитки"} ref={drinksRef} />
+						<ItemsGroup items={drinks} title={"Напитки"} ref={drinksRef} />
 
-					<ItemsGroup items={snacks} title={"Снэки"} ref={snackRef} />
+						<ItemsGroup items={snacks} title={"Снэки"} ref={snackRef} />
 
-					<ItemsGroup items={combo} title={"Комбо"} ref={comboRef} />
+						<ItemsGroup items={combo} title={"Комбо"} ref={comboRef} />
 
-					<ItemsGroup items={desserts} title={"Десерты"} ref={dessertRef} />
+						<ItemsGroup items={desserts} title={"Десерты"} ref={dessertRef} />
 
-					<ItemsGroup items={sauces} title={"Соусы"} ref={sauceRef} />
+						<ItemsGroup items={sauces} title={"Соусы"} ref={sauceRef} />
+					</div>
 				</div>
 			</div>
 		</div>
