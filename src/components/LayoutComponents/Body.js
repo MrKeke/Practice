@@ -88,9 +88,9 @@ export const BodyComponent = () => {
 
 	return (
 		<div>
-			<div className="max-w-[1300px] px-[15px] box-border bg-blue-600 mx-auto">
-				<div className="flex flex-col gap-8 py-8 bg-green-400">
-					<div className="bg-orange-500">
+			<div className="max-w-[1300px] px-[15px] box-border mx-auto">
+				<div className="flex flex-col gap-8 py-8">
+					<div>
 						<Swiper slidesPerView={"auto"} spaceBetween={spaceBetween}>
 							<SwiperSlide style={{ width: "min-content" }}>
 								<NavGen name="Пиццы" icon="/nav/pizza.jpg" ref={pizzaRef} />
@@ -119,7 +119,7 @@ export const BodyComponent = () => {
 							</SwiperSlide>
 						</Swiper>
 					</div>
-					<div className="flex flex-col gap-12 bg-slate-600">
+					<div className="flex flex-col gap-12 ">
 						<ItemsGroup items={pizzas} title={"Пиццы"} ref={pizzaRef} />
 
 						<ItemsGroup items={sushi} title={"Суши"} ref={sushiRef} />
