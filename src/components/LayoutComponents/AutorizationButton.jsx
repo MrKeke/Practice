@@ -8,7 +8,7 @@ class AutorizationButton extends React.Component {
 	render() {
 		return (
 			<div>
-				<Button className='bg-orange-400 text-gray-50 ml-3' onClick={this.openPopup}><UserOutlined />Зарегистрироваться</Button>
+				<Button className='bg-orange-400 text-gray-50' onClick={this.openPopup}><UserOutlined />Зарегистрироваться</Button>
 				<AutorizationForm />   
 			</div>
 		);
