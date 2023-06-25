@@ -268,6 +268,45 @@
       "img": "sauces/brown.webp"
     }
   ],
-  "selectedItems": [],
-  "users": []
+  "selectedItems": [
+    {
+      "id": 3,
+      "price": 120,
+      "name": "Сырная",
+      "ingridients": "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо",
+      "img": "pizza/d9c609f1422247f2b87b6293eb461ff0_584x584.webp"
+    },
+    {
+      "id": 4,
+      "price": 120,
+      "name": "Пепперони фреш",
+      "ingridients": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус",
+      "img": "pizza/27c9bbd0af3a4d1d84a086d9c2f1656d_584x584.webp"
+    },
+    {
+      "id": 1,
+      "price": 100,
+      "name": "Пицца от шефа",
+      "ingridients": "Пастрами из мраморной говядины, сладкий перец, томаты, красный лук, чеснок, соус ткемали, моцарелла, фирменный томатный соус",
+      "img": "pizza/d7bbbc4c74af442e8b9b3ea2faf3c941_584x584.webp"
+    }
+  ],
+  "users": [
+    {
+      "firstName": "",
+      "lastName": "",
+      "mail": "",
+      "address": "",
+      "password": 0,
+      "id": 1
+    },
+    {
+      "firstName": "чыфыфыф",
+      "lastName": "чыфчыф",
+      "mail": "ыфчыфыф",
+      "address": "чыфыфыфч",
+      "password": "ыфчыффыч",
+      "id": 2
+    }
+  ]
 }

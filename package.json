@@ -15,12 +15,15 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.63.5",
+    "swiper": "^9.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "concurrently \"npm run start-backend\" \"npm run start-front\"",
     "start-front": "cross-env PORT=3001 react-scripts start",
     "build": "react-scripts build",
+    "start-def": "react-scripts start",
     "lint": "eslint src/*",
     "lint-fix": "eslint src/* --fix",
     "start-backend": "json-server --watch db.json"
