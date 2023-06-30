@@ -7,7 +7,7 @@ import { cartStore, removeItem } from "store/cart";
 const CartComponent = () => {
 	const items = useStore(cartStore);
 	const [values, setValues] = useState([]);
-	const empty = values.length < 1;
+	const empty = items.length < 1;
 
 	const totalPrice = () => {
 		const total = values.reduce((acc, curr) => {
