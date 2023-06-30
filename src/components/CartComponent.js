@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Card } from "antd";
 import { CloseOutlined } from "@ant-design/icons";
 import { useStore } from "effector-react";
@@ -6,16 +5,7 @@ import { cartStore, removeItem } from "store/cart";
 
 const CartComponent = () => {
 	const items = useStore(cartStore);
-	const [values, setValues] = useState([]);
 	const empty = items.length < 1;
-
-	const totalPrice = () => {
-		const total = values.reduce((acc, curr) => {
-			return acc + curr.price;
-		}, 0);
-		return total;
-	};
-
 	return (
 		<>
 			<div className="">
@@ -50,7 +40,8 @@ const CartComponent = () => {
 				{!empty ? (
 					<div className="border-t-2 mt-7 relative">
 						<span className="font-bold left-0 absolute mt-2">
-              Сумма заказа {totalPrice()} ₽
+              Сумма заказа{" "}
+							{items.reduce((prev, el) => (prev + el.price),0)} ₽
 						</span>
 					</div>
 				) : null}
